@@ -34,7 +34,6 @@ jobs:
             # Optional
             SBOM: true # Saves SBOM to SBOM.json so you can export it as an artifact later.
             IMAGE: alpine # The image need to be public or the pipeline need to have access to the private image of choice.
-            LOCAL_IMAGE_TARBALL: image.tar
             # For each threshold below, select the maximum number of vulnerabilities that are acceptable.
             MAX_TOTAL: 0
             MAX_CRITICAL: 0
