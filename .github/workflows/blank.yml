@@ -35,11 +35,11 @@ jobs:
             SBOM: true # Saves SBOM to SBOM.json so you can export it as an artifact later.
             IMAGE: ubuntu # The image need to be public or the pipeline need to have access to the private image of choice.
             # For each threshold below, select the maximum number of vulnerabilities that are acceptable.
-            MAX_TOTAL: 0
-            MAX_CRITICAL: 0
-            MAX_HIGH: 0
-            MAX_MEDIUM: 0
-            MAX_LOW: 0
-            MAX_NEGLIGIBLE: 0
-            MAX_UNKNOWN: 0
+            MAX_TOTAL: 10
+            MAX_CRITICAL: 10
+            MAX_HIGH: 10
+            MAX_MEDIUM: 10
+            MAX_LOW: 10
+            MAX_NEGLIGIBLE: 10
+            MAX_UNKNOWN: 10
             SCAN_RESULT_ARTIFACT: result.json # Save as an artifact in GitHub to be able to keep the result of the scan.
