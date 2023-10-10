@@ -22,4 +22,4 @@ jobs:
               maxLow: 10
               cc_region: us-west-2
               templatePath: s3.yaml
-              cc_output_results: true
+              cc_output_results: false
