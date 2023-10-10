@@ -1,0 +1,25 @@
+name: My CI/CD Pipeline
+
+on: 
+  push:
+    branches: 
+      - main
+      
+jobs:      
+    CloudFormation-Scan:
+       runs-on: ubuntu-latest
+       steps:
+          - name: Checkout
+            uses: actions/checkout@v2
+          - name: Cloud One Conformity Pipeline Scanner
+            uses: raphabot/conformity-template-scanner-pipeline@version
+            env:
+              cc_apikey: ${{ secrets.APIKEY }}
+              maxExtreme: 0
+              maxVeryHigh: 1
+              maxHigh: 3
+              maxMedium: 5
+              maxLow: 10
+              cc_region: us-west-2
+              templatePath: s3.yaml
+              cc_output_results: true
