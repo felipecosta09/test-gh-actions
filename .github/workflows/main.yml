@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        jobs: ["Container Build", "Container Push"]
+        jobs: ["Container Build"]
     steps:
     - uses: actions/checkout@v2
     - name: Set up QEMU
