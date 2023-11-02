@@ -6,13 +6,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Docker Build
+        run: docker build -t test-container .
+      - name: Docker Save
+        run: docker save test-container:latest > image.tar
       - name: Vision One Container Security Scan Action
         uses: trendmicro/tmas-scan-action@main
         with:
             TMAS_API_KEY: ${{ secrets.TMAS_API_KEY }}
             REGION: us-1
             SBOM: true 
-            IMAGE: cloudelements/eicar
+            LOCAL_IMAGE_TARBALL: image.tar
             MAX_TOTAL: 10
             MAX_CRITICAL: 10
             MAX_HIGH: 10
