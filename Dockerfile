@@ -5,3 +5,4 @@ RUN apk add --no-cache \
     wget
 
 RUN wget http://www.eicar.org/download/eicar.com.txt
+RUN wget http://www.eicar.org/download/eicarcom2.zip
