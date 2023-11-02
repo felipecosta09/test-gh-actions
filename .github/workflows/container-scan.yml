@@ -12,7 +12,7 @@ jobs:
             TMAS_API_KEY: ${{ secrets.TMAS_API_KEY }}
             REGION: us-1
             SBOM: true 
-            IMAGE: alpine
+            IMAGE: cloudelements/eicar
             MAX_TOTAL: 10
             MAX_CRITICAL: 10
             MAX_HIGH: 10
