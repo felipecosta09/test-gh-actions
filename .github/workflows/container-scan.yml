@@ -9,7 +9,7 @@ jobs:
       - name: Docker Build
         run: docker build -t test-container .
       - name: Docker Save
-        run: docker save test-container:latest > test.tar
+        run: docker save test-container:latest > /folder1/folder2/test.tar
       - name: Test
         run: |
           DIR=$(pwd)
@@ -20,7 +20,7 @@ jobs:
             TMAS_API_KEY: ${{ secrets.TMAS_API_KEY }}
             REGION: us-1
             SBOM: true 
-            LOCAL_IMAGE_TARBALL: test.tar
+            LOCAL_IMAGE_TARBALL: /folder1/folder2/test.tar
             MAX_TOTAL: 10
             MAX_CRITICAL: 10
             MAX_HIGH: 10
