@@ -12,8 +12,7 @@ jobs:
         run: docker save test-container:latest > folder1/folder2/test.tar
       - name: Test
         run: |
-          DIR=$(pwd)
-          echo $DIR
+          ls -la
       - name: Vision One Container Security Scan Action
         uses: trendmicro/tmas-scan-action@main
         with:
