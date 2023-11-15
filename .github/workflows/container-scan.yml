@@ -13,13 +13,15 @@ jobs:
       - name: Test
         run: |
           ls -la
+          cd folder1/folder2
+          ls -la
       - name: Vision One Container Security Scan Action
         uses: trendmicro/tmas-scan-action@main
         with:
             TMAS_API_KEY: ${{ secrets.TMAS_API_KEY }}
             REGION: us-1
             SBOM: true 
-            LOCAL_IMAGE_TARBALL: /folder1/folder2/test.tar
+            LOCAL_IMAGE_TARBALL: test.tar
             MAX_TOTAL: 10
             MAX_CRITICAL: 10
             MAX_HIGH: 10
