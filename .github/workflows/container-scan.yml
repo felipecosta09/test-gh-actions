@@ -17,16 +17,20 @@ jobs:
           ls -la
       - name: Vision One Container Security Scan Action
         uses: trendmicro/tmas-scan-action@main
-        with:
+         with:
             TMAS_API_KEY: ${{ secrets.TMAS_API_KEY }}
-            REGION: us-1
-            SBOM: true 
-            LOCAL_IMAGE_TARBALL: test.tar
-            MAX_TOTAL: 10
-            MAX_CRITICAL: 10
-            MAX_HIGH: 10
-            MAX_MEDIUM: 10
-            MAX_LOW: 10
-            MAX_NEGLIGIBLE: 10
-            MAX_UNKNOWN: 10
+            REGION: us-east-1
+            VULNERABILITY_SCAN: true
+            SBOM: true
+            MALWARE_SCAN: true
+            SECRETS_SCAN: true
+            IMAGE: alpine
+            LOCAL_IMAGE_TARBALL: image.tar
+            MAX_TOTAL: 100
+            MAX_CRITICAL: 100
+            MAX_HIGH: 100
+            MAX_MEDIUM: 100
+            MAX_LOW: 100
+            MAX_NEGLIGIBLE: 100
+            MAX_UNKNOWN: 100
             SCAN_RESULT_ARTIFACT: result.json
