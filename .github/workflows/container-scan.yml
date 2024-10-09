@@ -9,12 +9,7 @@ jobs:
       - name: Docker Build
         run: docker build -t test-container .
       - name: Docker Save
-        run: docker save test-container:latest > folder1/folder2/test.tar
-      - name: Test
-        run: |
-          ls -la
-          cd folder1/folder2
-          ls -la
+        run: docker save test-container:latest > image.tar
       - name: Vision One Container Security Scan Action
         uses: trendmicro/tmas-scan-action@main
         with:
